@@ -1,6 +1,7 @@
 package attractions;
 
 import behaviours.IReviewed;
+import people.Visitor;
 
 public abstract class Attraction implements IReviewed {
     private String name;
@@ -25,5 +26,9 @@ public abstract class Attraction implements IReviewed {
 
     public int getVisitCount() {
         return visitCount;
+    }
+
+    public void increaseVisits(Visitor visitor) {
+        this.visitCount += 1;
     }
 }
