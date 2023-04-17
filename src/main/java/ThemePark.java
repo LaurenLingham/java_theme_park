@@ -37,16 +37,14 @@ public class ThemePark {
         ArrayList<IReviewed> allowedFeatures = new ArrayList<>();
 
         for (IReviewed feature : parkFeatures) {
-            if (feature instanceof ISecurity) {
-                if (((ISecurity) feature).isAllowedTo(visitor)) {
-                    allowedFeatures.add(feature);
-                }
+            if (!(feature instanceof ISecurity)) {
+                allowedFeatures.add(feature);
+                continue;
             }
-            else {
+            if (((ISecurity) feature).isAllowedTo(visitor)) {
                 allowedFeatures.add(feature);
             }
         }
-
         return allowedFeatures;
     }
 }
