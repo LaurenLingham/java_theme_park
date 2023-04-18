@@ -40,12 +40,12 @@ public class TobaccoStallTest {
     }
 
     @Test
-    public void isAllowedTo_True() {
+    public void isAllowedToSellTo18AndOver() {
         assertEquals(true, tobaccoStall.isAllowedTo(visitor1));
     }
 
     @Test
-    public void isAllowedTo_False() {
+    public void isNotAllowedToSellToUnder18() {
         assertEquals(false, tobaccoStall.isAllowedTo(visitor2));
     }
 }

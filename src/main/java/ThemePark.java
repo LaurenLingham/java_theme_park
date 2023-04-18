@@ -14,6 +14,10 @@ public class ThemePark {
         this.parkFeatures = new ArrayList<>();
     }
 
+    public void addParkFeature(IReviewed feature) {
+        this.parkFeatures.add(feature);
+    }
+
     public ArrayList<IReviewed> getAllReviewed() {
         return this.parkFeatures;
     }
@@ -29,7 +33,6 @@ public class ThemePark {
         for (IReviewed feature : parkFeatures) {
             reviews.put(feature.getName(), feature.getRating());
         }
-
         return reviews;
     }
 
